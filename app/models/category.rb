@@ -10,5 +10,7 @@ class Category < ApplicationRecord
  
   def songs
     Song.joins(:album).where(songs: { id: self.albums.ids }).distinct
+  endclass Api::V1::FavoritesController < ApplicationController
   end
+
 end
